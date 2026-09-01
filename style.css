@@ -1,0 +1,1369 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    background: #111;
+
+    color: rgb(249, 252, 255);
+
+    font-family: Arial, sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FIXED BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image: url("images/photo_2026-08-29_07-26-14.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    z-index: -2;
+}
+
+
+/* Затемнение фотографии */
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.42);
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 25px 50px;
+
+    z-index: 10;
+}
+
+header div {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================
+   SCREENS
+========================= */
+
+main section {
+    min-height: 100vh;
+
+    padding: 120px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+main h1 {
+    font-size: clamp(60px, 12vw, 180px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin: 20px 0;
+}
+
+main section p {
+    color: #aaa;
+
+    font-size: 16px;
+}
+
+main section p:first-child {
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+main section p,
+main section h1,
+main section button,
+main section a {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    animation: appear 1s ease forwards;
+}
+
+main section h1 {
+    animation-delay: 0.2s;
+}
+
+main section p:last-of-type {
+    animation-delay: 0.4s;
+}
+
+main section a,
+main section button {
+    animation-delay: 0.6s;
+}
+
+@keyframes appear {
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   GENERAL BUTTON
+========================= */
+
+button {
+    width: fit-content;
+
+    margin-top: 30px;
+
+    padding: 14px 35px;
+
+    background: transparent;
+
+    border: 1px solid white;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+
+    color: black;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+#about {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    background: rgba(00, 00, 00, 0.40);
+
+    padding: 120px 10%;
+}
+
+.about-text {
+    max-width: 650px;
+}
+
+#about h2 {
+    font-size: clamp(50px, 7vw, 110px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin: 20px 0 35px;
+}
+
+.about-text .bio {
+    max-width: 450px;
+
+    color: white;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ABOUT PHOTO
+========================= */
+
+.about-photo {
+    width: 320px;
+
+    flex-shrink: 0;
+}
+
+.about-photo img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+#music {
+    background: rgba(00, 00, 00
+, 0.40);
+}
+
+#music h2 {
+    font-size: clamp(60px, 9vw, 140px);
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    margin: 20px 0;
+}
+
+
+/* =========================
+   TRACK
+========================= */
+
+.track {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin-top: 50px;
+
+    padding: 25px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.track h3 {
+    font-size: 24px;
+
+    font-weight: normal;
+}
+
+.track p {
+    margin-top: 8px;
+
+    color: #777;
+}
+
+.track-button {
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+
+    cursor: none;
+}
+
+.track-button:hover {
+    background: white;
+    color: black;
+}
+
+.track button:hover {
+    background: white;
+
+    color: black;
+}
+
+
+/* =========================
+   LISTEN
+========================= */
+
+#listen {
+    background: rgba(0, 0, 0, 0.30);
+
+    color: #f5d000;
+}
+
+#listen h2 {
+    font-size: clamp(50px, 9vw, 130px);
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+
+    margin: 20px 0 30px;
+
+    color: #f5d000;
+
+    max-width: 1100px;
+}
+
+#listen p {
+    color: #f5d000;
+}
+
+
+/* =========================
+   LISTEN BUTTON
+========================= */
+
+#listen .listen-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: 35px;
+
+    padding: 16px 30px;
+
+    border: 1px solid #f5d000;
+
+    color: #f5d000;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+#listen .listen-button:hover {
+    background: #f5d000;
+
+    color: #050505;
+}
+/* =========================
+   WHALE CURSOR
+========================= */
+
+body {
+    cursor: none;
+}
+
+#whale-cursor {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 70px;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    transform: translate(-50%, -50%);
+}
+
+#whale-cursor img {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+/* =========================
+   RAIN
+========================= */
+
+.rain {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    overflow: hidden;
+}
+
+.drop {
+    position: absolute;
+
+    top: -100px;
+
+    width: 1px;
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    animation: rain 1s linear infinite;
+}
+
+@keyframes rain {
+
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(110vh);
+    }
+
+}
+/* =========================
+   RAIN
+========================= */
+
+.rain {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    opacity: 0.35;
+
+    background-image:
+        repeating-linear-gradient(
+            105deg,
+            transparent 0px,
+            transparent 45px,
+            rgba(255, 255, 255, 0.35) 46px,
+            transparent 47px,
+            transparent 90px
+        );
+
+    background-size: 100px 100px;
+
+    animation: rainMove 0.8s linear infinite;
+}
+
+@keyframes rainMove {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: -30px 100px;
+    }
+
+}
+/* =========================
+   RAIN PNG
+========================= */
+
+.rain-layer {
+    position: absolute;
+
+    inset: 0;
+
+    background-image: url("images/rain.png");
+
+    background-size: 700px auto;
+
+    background-position: center;
+
+    background-repeat: repeat;
+
+    opacity: 0.35;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+main section > *:not(.rain-layer) {
+    position: relative;
+
+    z-index: 1;
+}
+/* =========================
+   LIVING RAIN
+========================= */
+
+.rain-layer {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    opacity: 0.35;
+
+    background-image: url("images/rain.png");
+
+    background-size: 500px auto;
+
+    background-position: 0 0;
+
+    background-repeat: repeat;
+
+    animation: rainMove 8s linear infinite;
+}
+
+@keyframes rainMove {
+
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -80px 180px;
+    }
+
+}
+/* =========================
+   NEON MUSIC PLAYER
+========================= */
+
+#music {
+    min-height: 100vh;
+
+    padding: 120px 10%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: #05050a;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+#music h2 {
+    font-size: clamp(60px, 10vw, 140px);
+
+    line-height: 0.85;
+
+    letter-spacing: -5px;
+
+    margin: 20px 0;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #7c3cff,
+        0 0 30px #7c3cff,
+        0 0 60px #7c3cff;
+}
+
+.music-description {
+    color: #888;
+}
+
+/* PLAYER */
+
+.music-player {
+    position: relative;
+
+    display: flex;
+
+    width: min(1000px, 100%);
+
+    margin-top: 60px;
+
+    padding: 30px;
+
+    gap: 40px;
+
+    background: rgba(10, 10, 20, 0.85);
+
+    border: 1px solid rgba(124, 60, 255, 0.7);
+
+    box-shadow:
+        0 0 15px rgba(124, 60, 255, 0.4),
+        0 0 50px rgba(124, 60, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1;
+}
+
+/* COVER */
+
+.album-cover {
+    width: 280px;
+
+    height: 280px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 0 20px rgba(124, 60, 255, 0.5);
+}
+
+.album-cover img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* PLAYER CONTENT */
+
+.player-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.player-label {
+    color: #8c5cff;
+
+    letter-spacing: 4px;
+
+    font-size: 12px;
+
+    margin-bottom: 10px;
+}
+
+.player-content h3 {
+    font-size: 40px;
+
+    font-weight: normal;
+
+    margin-bottom: 25px;
+}
+
+/* VK */
+
+#vk_playlist_-2000913577_25913577 {
+    width: 100%;
+}
+/* ==================================================
+   NEON FUTURE — ОБЩИЙ СТИЛЬ
+================================================== */
+
+:root {
+    --neon-purple: #8b5cff;
+    --neon-blue: #00d9ff;
+    --neon-pink: #ff2bd6;
+    --neon-yellow: #f5d000;
+    --dark: #05050a;
+}
+
+
+/* ==================================================
+   ОБЩЕЕ
+================================================== */
+
+body {
+    background: #05050a;
+    color: white;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+header {
+    background: rgba(5, 5, 10, 0.35);
+
+    backdrop-filter: blur(8px);
+
+    border-bottom: 1px solid rgba(139, 92, 255, 0.25);
+
+    box-shadow:
+        0 0 20px rgba(139, 92, 255, 0.08);
+}
+
+header div {
+    color: white;
+
+    text-shadow:
+        0 0 8px var(--neon-purple),
+        0 0 20px rgba(139, 92, 255, 0.7);
+}
+
+nav a {
+    transition: 0.3s;
+
+    text-shadow:
+        0 0 5px rgba(255,255,255,0.3);
+}
+
+nav a:hover {
+    color: var(--neon-blue);
+
+    text-shadow:
+        0 0 8px var(--neon-blue),
+        0 0 20px var(--neon-blue);
+}
+
+
+/* ==================================================
+   ГЛАВНЫЙ ЭКРАН
+================================================== */
+
+main > section:first-child {
+    position: relative;
+
+    border-bottom: 1px solid rgba(139, 92, 255, 0.5);
+}
+
+main > section:first-child h1 {
+    text-shadow:
+        0 0 10px rgba(255,255,255,0.5),
+        0 0 30px var(--neon-purple),
+        0 0 70px rgba(139, 92, 255, 0.7);
+}
+
+main > section:first-child p {
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.25);
+}
+
+
+/* ==================================================
+   ОБЩИЕ КНОПКИ
+================================================== */
+
+button,
+.listen-button {
+    position: relative;
+
+    border: 1px solid var(--neon-blue);
+
+    color: var(--neon-blue);
+
+    background: rgba(0, 217, 255, 0.03);
+
+    box-shadow:
+        0 0 8px rgba(0, 217, 255, 0.35),
+        inset 0 0 8px rgba(0, 217, 255, 0.08);
+
+    text-shadow:
+        0 0 8px var(--neon-blue);
+
+    transition: 0.3s;
+}
+
+button:hover,
+.listen-button:hover {
+    background: var(--neon-blue);
+
+    color: #05050a;
+
+    box-shadow:
+        0 0 10px var(--neon-blue),
+        0 0 30px var(--neon-blue),
+        0 0 60px rgba(0, 217, 255, 0.7);
+
+    text-shadow: none;
+}
+
+
+/* ==================================================
+   ABOUT
+================================================== */
+
+#about {
+    background: rgba(25, 10, 60, 0.92);
+
+    border-top: 1px solid rgba(139, 92, 255, 0.5);
+
+    border-bottom: 1px solid rgba(139, 92, 255, 0.5);
+
+    box-shadow:
+        inset 0 0 80px rgba(139, 92, 255, 0.08);
+}
+
+#about h2 {
+    color: white;
+
+    text-shadow:
+        0 0 10px var(--neon-purple),
+        0 0 30px var(--neon-purple),
+        0 0 70px rgba(139, 92, 255, 0.6);
+}
+
+#about .bio {
+    color: #d0c8e8;
+
+    text-shadow:
+        0 0 8px rgba(139, 92, 255, 0.25);
+}
+
+
+/* PHOTO */
+
+.about-photo {
+    border: 1px solid var(--neon-purple);
+
+    padding: 8px;
+
+    background: rgba(139, 92, 255, 0.05);
+
+    box-shadow:
+        0 0 10px rgba(139, 92, 255, 0.5),
+        0 0 30px rgba(139, 92, 255, 0.25),
+        0 0 70px rgba(139, 92, 255, 0.15);
+}
+
+.about-photo img {
+    display: block;
+}
+
+
+/* ==================================================
+   MUSIC
+================================================== */
+
+#music {
+    background: #030308;
+
+    border-bottom: 1px solid rgba(0, 217, 255, 0.5);
+
+    box-shadow:
+        inset 0 0 100px rgba(0, 217, 255, 0.04);
+}
+
+#music > p:first-child {
+    color: var(--neon-blue);
+
+    text-shadow:
+        0 0 8px var(--neon-blue),
+        0 0 20px var(--neon-blue);
+}
+
+#music h2 {
+    color: white;
+
+    text-shadow:
+        0 0 10px var(--neon-blue),
+        0 0 30px var(--neon-blue),
+        0 0 70px rgba(0, 217, 255, 0.5);
+}
+
+
+/* ==================================================
+   TRACKS
+================================================== */
+
+.track {
+    border-top: 1px solid rgba(0, 217, 255, 0.4);
+
+    border-bottom: 1px solid rgba(0, 217, 255, 0.4);
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.05);
+
+    transition: 0.3s;
+}
+
+.track:hover {
+    padding-left: 15px;
+
+    border-color: var(--neon-blue);
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.2),
+        0 0 35px rgba(0, 217, 255, 0.08);
+}
+
+.track h3 {
+    color: white;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.3);
+}
+
+.track p {
+    color: #68747a;
+}
+
+.track button {
+    border-color: var(--neon-blue);
+
+    color: var(--neon-blue);
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.35);
+}
+
+
+/* ==================================================
+   NEON MUSIC PLAYER
+================================================== */
+
+.music-player {
+    border: 1px solid var(--neon-purple);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 255, 0.08),
+            rgba(0, 217, 255, 0.03)
+        );
+
+    box-shadow:
+        0 0 10px rgba(139, 92, 255, 0.4),
+        0 0 40px rgba(139, 92, 255, 0.15),
+        inset 0 0 40px rgba(0, 217, 255, 0.03);
+}
+
+.album-cover {
+    border-color: var(--neon-pink);
+
+    box-shadow:
+        0 0 10px rgba(255, 43, 214, 0.6),
+        0 0 30px rgba(255, 43, 214, 0.3),
+        0 0 60px rgba(255, 43, 214, 0.15);
+}
+
+.player-label {
+    color: var(--neon-pink);
+
+    text-shadow:
+        0 0 8px var(--neon-pink),
+        0 0 20px var(--neon-pink);
+}
+
+.player-content h3 {
+    color: white;
+
+    text-shadow:
+        0 0 10px var(--neon-purple),
+        0 0 25px var(--neon-purple);
+}
+
+
+/* ==================================================
+   LISTEN — ЖЁЛТЫЙ НЕОН
+================================================== */
+
+#listen {
+    background: #050505;
+
+    border-top: 1px solid rgba(245, 208, 0, 0.5);
+
+    border-bottom: 1px solid rgba(245, 208, 0, 0.5);
+
+    box-shadow:
+        inset 0 0 100px rgba(245, 208, 0, 0.04);
+}
+
+#listen h2 {
+    color: var(--neon-yellow);
+
+    text-shadow:
+        0 0 10px var(--neon-yellow),
+        0 0 30px var(--neon-yellow),
+        0 0 70px rgba(245, 208, 0, 0.5);
+}
+
+#listen > p:first-child {
+    color: var(--neon-yellow);
+
+    text-shadow:
+        0 0 8px var(--neon-yellow),
+        0 0 20px var(--neon-yellow);
+}
+
+#listen .listen-button {
+    border-color: var(--neon-yellow);
+
+    color: var(--neon-yellow);
+
+    box-shadow:
+        0 0 10px rgba(245, 208, 0, 0.4),
+        inset 0 0 10px rgba(245, 208, 0, 0.05);
+
+    text-shadow:
+        0 0 8px var(--neon-yellow);
+}
+
+#listen .listen-button:hover {
+    background: var(--neon-yellow);
+
+    color: #050505;
+
+    box-shadow:
+        0 0 10px var(--neon-yellow),
+        0 0 30px var(--neon-yellow),
+        0 0 60px rgba(245, 208, 0, 0.7);
+}/* =================================
+   ПРОЗРАЧНЫЙ НЕОНОВЫЙ СТИЛЬ
+================================= */
+
+/* ВЕРХНИЙ ANGLE BRACKETS */
+
+header {
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: none;
+    box-shadow: none;
+}
+
+header div {
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 5px #00d9ff,
+        0 0 12px #00d9ff,
+        0 0 25px rgba(0, 217, 255, 0.8);
+}
+
+
+/* МЕНЮ */
+
+nav a {
+    color: white;
+
+    text-shadow:
+        0 0 5px rgba(255, 255, 255, 0.4);
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 5px #00d9ff,
+        0 0 15px #00d9ff,
+        0 0 30px #00d9ff;
+}
+
+
+/* =================================
+   ВСЕ БЛОКИ ПРОЗРАЧНЫЕ
+================================= */
+
+#about,
+#music,
+#listen {
+    background: transparent;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+}
+
+
+/* =================================
+   ABOUT
+================================= */
+
+#about {
+    border-top: 1px solid rgba(139, 92, 255, 0.5);
+    border-bottom: 1px solid rgba(139, 92, 255, 0.5);
+}
+
+#about h2 {
+    text-shadow:
+        0 0 8px #8b5cff,
+        0 0 20px #8b5cff,
+        0 0 45px rgba(139, 92, 255, 0.6);
+}
+
+
+/* =================================
+   MUSIC
+================================= */
+
+#music {
+    border-top: 1px solid rgba(0, 217, 255, 0.5);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.5);
+}
+
+#music h2 {
+    text-shadow:
+        0 0 8px #00d9ff,
+        0 0 20px #00d9ff,
+        0 0 45px rgba(0, 217, 255, 0.6);
+}
+
+
+/* =================================
+   MUSIC PLAYER
+================================= */
+
+.music-player {
+    background: transparent;
+
+    border: 1px solid rgba(0, 217, 255, 0.7);
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.35),
+        0 0 30px rgba(0, 217, 255, 0.12);
+}
+
+
+/* =================================
+   ОБЛОЖКА
+================================= */
+
+.album-cover {
+    background: transparent;
+
+    border: 1px solid #ff2bd6;
+
+    box-shadow:
+        0 0 8px #ff2bd6,
+        0 0 20px rgba(255, 43, 214, 0.5);
+}
+
+
+/* =================================
+   TRACK
+================================= */
+
+.track {
+    background: transparent;
+
+    border-top: 1px solid rgba(0, 217, 255, 0.45);
+
+    border-bottom: 1px solid rgba(0, 217, 255, 0.45);
+
+    box-shadow: none;
+}
+
+
+/* =================================
+   LISTEN
+================================= */
+
+#listen {
+    border-top: 1px solid rgba(245, 208, 0, 0.5);
+    border-bottom: 1px solid rgba(245, 208, 0, 0.5);
+}
+
+#listen h2 {
+    text-shadow:
+        0 0 8px #f5d000,
+        0 0 20px #f5d000,
+        0 0 45px rgba(245, 208, 0, 0.6);
+}/* =================================
+   LISTEN НА ГЛАВНОМ ЭКРАНЕ
+================================= */
+
+main > section:first-child .listen-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: 30px;
+
+    padding: 14px 35px;
+
+    border: 1px solid white;
+
+    color: white;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    letter-spacing: 0;
+
+    box-shadow: none;
+
+    text-shadow: none;
+
+    transition: 0.3s;
+}
+
+main > section:first-child .listen-button:hover {
+    background: white;
+
+    color: black;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 25px rgba(255, 255, 255, 0.6);
+
+    text-shadow: none;
+}
+/* =================================
+   LOGO — ANGLE BRACKETS
+================================= */
+
+header div {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    font-weight: normal;
+
+    letter-spacing: 6px;
+
+    color: #f5d000;
+
+    text-shadow:
+        0 0 5px rgba(245, 208, 0, 0.7),
+        0 0 15px rgba(245, 208, 0, 0.35);
+}
+main > section:first-child h1 {
+    font-family: "Ballet", cursive;
+
+    font-weight: 400;
+
+    font-size: clamp(80px, 13vw, 210px);
+
+    letter-spacing: 2px;
+
+    line-height: 0.8;
+
+    color: #f5d000;
+
+    text-shadow:
+        0 0 8px rgba(245, 208, 0, 0.8),
+        0 0 25px rgba(245, 208, 0, 0.45),
+        0 0 60px rgba(245, 208, 0, 0.2);
+
+    transform: none;
+}
+main > section:first-child h1 {
+    font-family: "Bodoni Moda", serif;
+
+    font-weight: 500;
+
+    font-size: clamp(60px, 11vw, 175px);
+
+    letter-spacing: -3px;
+
+    line-height: 0.85;
+
+    color: #f5f2e8;
+
+    text-shadow:
+        0 0 8px rgba(245, 242, 232, 0.35),
+        0 0 25px rgba(245, 242, 232, 0.12);
+
+    transform: none;
+}

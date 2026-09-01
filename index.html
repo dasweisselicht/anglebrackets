@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Angle Brackets ()</title>
+
+    <link rel="stylesheet" href="style.css">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="rain"></div>
+
+    <div id="whale-cursor">
+        <img src="images/whale.png" alt="">
+    </div>
+
+
+</div>
+    <div id="whale-cursor">
+    <img src="images/whale.png" alt="">
+</div>
+
+    <header>
+
+        <div>Angle Brackets () </div>
+
+       <nav>
+    <a href="#about">About</a>
+    <a href="#music">Music</a>
+    <a href="#listen">Listen</a>
+</nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ГЛАВНЫЙ ЭКРАН -->
+
+        <section>
+
+            <p>Independent artist</p>
+
+            <h1>ANGLE BRACKETS ( )</h1>
+
+            <p>Музыкант</p>
+
+            <a href="#music" class="listen-button">
+                LISTEN
+            </a>
+
+        </section>
+
+        <section id="about">
+
+    <div class="about-text">
+<!-- ABOUT -->
+  <div class="rain-layer"></div>
+        <p>ABOUT</p>
+
+        <h2>ANGLE BRACKETS ()</h2>
+
+        <p class="bio">
+            Это Мишка. Он из Минска. Он скрывается за шляпой! А еще он пишет много хороших стихов и песен. Все пишет и пишет!
+        </p>
+
+    </div>
+
+    <div class="about-photo">
+
+        <img src="images/artist.jpg" alt="ANGLE BRACKETS">
+
+          <img src="images/artist.jpg" alt="ANGLE BRACKETS">
+          <img src="images/artist.jpg" alt="ANGLE BRACKETS">
+          
+          <div class="rain-layer"></div>
+
+    </div>
+
+</section>
+
+<!-- МУЗЫКА -->
+
+<section id="music">
+    <div class="rain-layer"></div>
+<section id="music">
+
+    <div class="rain-layer"></div>
+    <div class="rain-layer rain-layer-2"></div>
+
+    <p>LISTEN</p>
+
+    <h2>Music</h2>
+
+    <p class="music-description">
+        Listen to ANGLE BRACKETS
+    </p>
+
+    <div class="music-player">
+
+        <div class="album-cover">
+            <img src="images/между нами.jpg" alt="ANGLE BRACKETS">
+        </div>
+
+        <div class="player-content">
+
+            <p class="player-label">ANGLE BRACKETS</p>
+
+            <h3>Music</h3>
+
+            <div id="vk_playlist_-2000913577_25913577"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="listen">
+    <div class="rain-layer"></div>
+
+    <p>STREAM</p>
+
+    <h2>"Синдром одиночки ч.1"</h2>
+
+    <p>
+        СЛУШАЙ
+    </p>
+
+    <a href="https://onerpm.link/235512329184"
+       class="listen-button"
+       target="_blank">
+        LISTEN ANYWHERE
+    </a>
+
+</section>
+
+</main>
+<script>
+
+const whale = document.getElementById("whale-cursor");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let whaleX = 0;
+let whaleY = 0;
+
+document.addEventListener("mousemove", function(event) {
+
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+});
+
+function animateWhale() {
+
+    whaleX += (mouseX - whaleX) * 0.12;
+    whaleY += (mouseY - whaleY) * 0.12;
+
+    whale.style.left = whaleX + "px";
+    whale.style.top = whaleY + "px";
+
+    requestAnimationFrame(animateWhale);
+
+}
+
+animateWhale();
+
+</script>
+
+<script type="text/javascript" src="https://vk.ru/js/api/openapi.js"></script>
+
+<script type="text/javascript">
+(function() {
+    VK.Widgets.Playlist(
+        "vk_playlist_-2000913577_25913577",
+        -2000913577,
+        25913577,
+        "",
+        {}
+    );
+}());
+</script>
+
+</body>
+
+
+</html>
